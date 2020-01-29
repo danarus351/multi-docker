@@ -15,7 +15,7 @@ after_success:
 #Log in to the docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --paasword-stdin
 #Take those images and deploy 
-- docker push danarusdanarus/multi_client
-- docker push danarus/multi_nginx 
-- docker push danarus/multi_server
-- docker push danarus/multi_worker
+    - docker push danarusdanarus/multi_client
+    - docker push danarus/multi_nginx 
+    - docker push danarus/multi_server
+    - docker push danarus/multi_worker

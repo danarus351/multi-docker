@@ -18,4 +18,4 @@ after_success:
     - docker push danarus/multi_client
     - docker push danarus/multi_nginx 
     - docker push danarus/multi_server
-    - docker push danarus/multi_worke
+    - docker push danarus/multi_worker

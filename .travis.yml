@@ -3,7 +3,7 @@ sudo: required
 services:
     - docker 
 before_install:
-    - docker build -t danarus/react-test -f ./client/Dockerfile.dev ./clinet
+    - docker build -t danarus/react-test -f Dockerfile.dev ./clinet
 
 script:
     - docker run -e CI=true danarus/react-test npm test

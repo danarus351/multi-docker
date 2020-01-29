@@ -1,3 +1,4 @@
+language: ganeric
 sudo: required
 services:
     - docker 

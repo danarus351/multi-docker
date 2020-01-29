@@ -3,7 +3,7 @@ sudo: required
 services:
     - docker 
 before_install:
-    - docker build -t danaruus/react-test -f ./client/Dockerfile.dev ./clinet/
+    - docker build -t danarus/react-test -f ./client/Dockerfile.dev ./clinet
 
 script:
     - docker run -e CI=true danarus/react-test npm test
@@ -15,7 +15,7 @@ after_success:
 #Log in to the docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --paasword-stdin
 #Take those images and deploy 
-    - docker push danarusdanarus/multi_client
+    - docker push danarus/multi_client
     - docker push danarus/multi_nginx 
     - docker push danarus/multi_server
     - docker push danarus/multi_worker

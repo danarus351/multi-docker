@@ -13,7 +13,7 @@ after_success:
     - docker build -t danarus/multi_server ./server
     - docker build -t danarus/multi_worker ./worker
 #Log in to the docker CLI
-    - echo $(DOCKER_PASSWORD) |docker login -u $DOCKER_ID --paasword-stdin
+    - echo "$DOCKER_PASSWORD" |docker login -u "$DOCKER_ID" --paasword-stdin
 #Take those images and deploy 
     - docker push danarus/multi_client
     - docker push danarus/multi_nginx 

@@ -19,3 +19,16 @@ after_success:
     - docker push danarus/multi_nginx 
     - docker push danarus/multi_server
     - docker push danarus/multi_worker
+deploy:
+    edge: true
+    provider: elasticbeanstalk
+    region: eu-central-`
+    app: multi-docker 
+    env: MultiDocker-env-1
+    bucket_name: elasticbeanstalk-eu-central-1-136102615569
+    bucket_path: docker-multi
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+        secure: $AWS_SECRERT_KEY

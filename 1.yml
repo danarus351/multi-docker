@@ -1,17 +1,13 @@
 version: "3"
 services: 
-    api: 
-        build: 
-            dockerfile: Dockerfile.dev
-            context: ./server
     client:
         build:
             dockerfile: Dockerfile.dev
             context: ./client
     nginx:
         depends_on: 
-            - api
             - client
+        restart: always
         build: 
             dockerfile: Dockerfile.dev
             context: ./nginx

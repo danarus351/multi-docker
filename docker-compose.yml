@@ -6,7 +6,7 @@ services:
         image: 'redis'
     api:
         build: 
-            dockerfile: Dockerfile.dev
+            dockerfile: Dockerfile
             context: ./server/
         volumes: 
             - /app/node_modules
@@ -21,14 +21,14 @@ services:
             - PGPORT=5432
     client: 
         build: 
-            dockerfile: Dockerfile.dev
+            dockerfile: Dockerfile
             context: ./client/
         volumes: 
              - /app/node_modules
              - ./client:/app
     worker:
         build:
-            dockerfile: Dockerfile.dev
+            dockerfile: Dockerfile
             context: ./worker/
         volumes: 
             - /app/node_modules
@@ -38,11 +38,11 @@ services:
             - REDIS_PORT=6379
     nginx:
         depends_on: 
-            - api
-            - client
+         - api
+         - client
         restart: always
         build: 
-            dockerfile: Dockerfile.dev
+            dockerfile: Dockerfile
             context: ./nginx
         ports: 
             - '3050:80'

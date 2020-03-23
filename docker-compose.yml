@@ -1,7 +1,9 @@
 version: '3'
 services:
     postgres: 
-         image: 'postgres'
+         image: 'postgres:latest'
+         enviroment:
+         - POSTGRES_PASSWORD=postgrespassword
     redis:
         image: 'redis'
     api:
